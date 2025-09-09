@@ -1,0 +1,21 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#2563eb"/>
+  
+  <!-- Link icon -->
+  <path d="M45 64H35C29.4772 64 25 59.5228 25 54V54C25 48.4772 29.4772 44 35 44H45M83 64H93C98.5228 64 103 59.5228 103 54V54C103 48.4772 98.5228 44 93 44H83M45 64H83" 
+        stroke="white" 
+        stroke-width="6" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Short arrow -->
+  <path d="M75 85L85 75L75 65" 
+        stroke="white" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- "S" for Short -->
+  <text x="64" y="100" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">QS</text>
+</svg>

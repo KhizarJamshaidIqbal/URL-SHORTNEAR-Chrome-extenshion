@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "QuickShort URL Shortener",
+  "version": "1.0.0",
+  "description": "Instantly shorten URLs with multiple providers - secure, fast, and privacy-focused",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage",
+    "clipboardWrite",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://api-ssl.bitly.com/*",
+    "https://tinyurl.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png",
+      "128": "assets/icon-128.png"
+    },
+    "default_title": "QuickShort - Shorten URL"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  }
+}

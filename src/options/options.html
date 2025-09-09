@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickShort Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>QuickShort Settings</h1>
+    </header>
+
+    <main>
+      <section class="settings-section">
+        <h2>URL Shortening Provider</h2>
+        <div class="provider-options">
+          <label class="radio-option">
+            <input type="radio" name="provider" value="tinyurl" id="provider-tinyurl">
+            <span class="radio-label">
+              <strong>TinyURL</strong>
+              <small>No API key required</small>
+            </span>
+          </label>
+          
+          <label class="radio-option">
+            <input type="radio" name="provider" value="bitly" id="provider-bitly">
+            <span class="radio-label">
+              <strong>Bitly</strong>
+              <small>Requires API key</small>
+            </span>
+          </label>
+          
+          <label class="radio-option">
+            <input type="radio" name="provider" value="custom" id="provider-custom">
+            <span class="radio-label">
+              <strong>Custom API</strong>
+              <small>Your own endpoint</small>
+            </span>
+          </label>
+        </div>
+
+        <div id="bitly-config" class="provider-config hidden">
+          <label for="bitly-key">Bitly API Key</label>
+          <input type="password" id="bitly-key" placeholder="Enter your Bitly API key">
+          <small>Get your API key from <a href="https://bitly.com/a/settings/api" target="_blank">Bitly Settings</a></small>
+        </div>
+
+        <div id="custom-config" class="provider-config hidden">
+          <label for="custom-endpoint">Custom API Endpoint</label>
+          <input type="url" id="custom-endpoint" placeholder="https://your-api.com/shorten">
+          <small>POST endpoint that accepts JSON with "url" field</small>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Preferences</h2>
+        <label class="checkbox-option">
+          <input type="checkbox" id="auto-copy">
+          <span>Auto-copy shortened URL to clipboard</span>
+        </label>
+        
+        <label class="checkbox-option">
+          <input type="checkbox" id="analytics">
+          <span>Enable anonymous usage analytics (opt-in)</span>
+        </label>
+      </section>
+
+      <section class="settings-section">
+        <h2>History Management</h2>
+        <div class="button-group">
+          <button id="clear-history" class="secondary-btn">Clear History</button>
+          <button id="export-settings" class="secondary-btn">Export Settings</button>
+          <button id="import-settings" class="secondary-btn">Import Settings</button>
+        </div>
+        <input type="file" id="import-file" accept=".json" class="hidden">
+      </section>
+
+      <section class="settings-section">
+        <h2>Security</h2>
+        <div class="info-box">
+          <p><strong>API Key Storage:</strong> Your API keys are stored securely in Chrome's synchronized storage and are never sent to any third parties.</p>
+          <p><strong>Key Rotation:</strong> We recommend rotating your API keys every 90 days for security.</p>
+        </div>
+      </section>
+
+      <div class="save-section">
+        <button id="save-btn" class="primary-btn">Save Settings</button>
+        <span id="save-status" class="save-status"></span>
+      </div>
+    </main>
+  </div>
+
+  <script src="../../dist/options.js"></script>
+</body>
+</html>

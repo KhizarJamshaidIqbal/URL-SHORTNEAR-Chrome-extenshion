@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickShort - URL Shortener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Modern Header -->
+    <header class="header">
+      <div class="logo" aria-label="QuickShort Logo">
+        QS
+      </div>
+      <div class="header-content">
+        <h1>QuickShort</h1>
+        <p>Fast & Secure URL Shortening</p>
+      </div>
+    </header>
+
+    <!-- Main Content Card -->
+    <main class="main-content">
+      <!-- URL Input Section -->
+      <div class="input-group">
+        <label for="url-input">Enter URL to Shorten</label>
+        <div class="input-wrapper">
+          <input 
+            type="url" 
+            id="url-input" 
+            class="input-field"
+            placeholder="Current page URL will be auto-filled..."
+            aria-describedby="url-error"
+            autocomplete="off"
+          />
+          <span id="url-type-indicator" class="url-type-indicator hidden"></span>
+        </div>
+        <span id="url-error" class="error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="button-group">
+        <button id="shorten-btn" class="btn btn-primary">
+          <span class="btn-text">✨ Shorten URL</span>
+        </button>
+      </div>
+
+      <!-- Result Section -->
+      <div id="result" class="result hidden">
+        <label for="short-url">Shortened URL</label>
+        <input type="text" id="short-url" class="result-input" readonly />
+        <div class="actions">
+          <button id="copy-btn" class="btn btn-secondary btn-small">
+            📋 Copy
+          </button>
+          <button id="open-btn" class="btn btn-secondary btn-small">
+            🔗 Open
+          </button>
+          <button id="qr-btn" class="btn btn-secondary btn-small">
+            📱 QR Code
+          </button>
+        </div>
+        <canvas id="qr-canvas" class="hidden"></canvas>
+      </div>
+
+      <!-- History Section -->
+      <div id="history" class="history">
+        <h2>Recent URLs</h2>
+        <ul id="history-list" class="history-list"></ul>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#" class="footer-link" id="options-link">Settings</a>
+        <a href="#" class="footer-link" id="history-link">History</a>
+        <a href="#" class="footer-link" id="help-link">Help</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
